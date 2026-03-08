@@ -45,9 +45,9 @@ public class BrtFacts
             })
             .build());
 
-    public BrtFacts()
+    public BrtFacts(FMLJavaModLoadingContext context)
     {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus modEventBus = context.getModEventBus();
 
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);

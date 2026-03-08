@@ -15,6 +15,7 @@ public class MinersGogglesItem extends ArmorItem {
     }
 
     @Override
+    @SuppressWarnings("removal")
     public void onArmorTick(ItemStack stack, Level level, Player player) {
         if (!level.isClientSide()) {
             player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 220, 0, false, false, true));
