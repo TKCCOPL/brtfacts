@@ -14,6 +14,7 @@ public class BunnySlippersItem extends ArmorItem {
     }
 
     @Override
+    @SuppressWarnings("removal")
     public void onArmorTick(ItemStack stack, Level level, Player player) {
         if (!level.isClientSide()) {
             player.addEffect(new MobEffectInstance(MobEffects.JUMP, 220, 1, false, false, true));
