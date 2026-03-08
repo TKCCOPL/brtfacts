@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SWS",
+    "WFW",
+    " W "
+  ],
+  "key": {
+    "S": { "item": "minecraft:string" },
+    "W": { "tag": "minecraft:wool" },
+    "F": { "item": "minecraft:feather" }
+  },
+  "result": {
+    "item": "brtfacts:swift_scarf"
+  }
+}

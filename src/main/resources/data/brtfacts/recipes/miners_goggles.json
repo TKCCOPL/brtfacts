@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LGL",
+    "GPG"
+  ],
+  "key": {
+    "L": { "item": "minecraft:leather" },
+    "G": { "item": "minecraft:gold_ingot" },
+    "P": { "tag": "forge:glass_panes" }
+  },
+  "result": {
+    "item": "brtfacts:miners_goggles"
+  }
+}
