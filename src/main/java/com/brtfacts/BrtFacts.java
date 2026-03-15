@@ -5,7 +5,6 @@ import com.brtfacts.item.IronFistItem;
 import com.brtfacts.item.MinersGogglesItem;
 import com.brtfacts.item.SwiftScarfItem;
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
