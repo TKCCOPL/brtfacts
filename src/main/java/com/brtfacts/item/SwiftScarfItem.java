@@ -1,26 +1,30 @@
 package com.brtfacts.item;
 
+import com.brtfacts.integration.curios.CuriosCompat;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.type.capability.ICurioItem;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.fml.ModList;
 
-public class SwiftScarfItem extends Item implements ICurioItem {
-    private static final int EFFECT_DURATION_TICKS = 220;
+import javax.annotation.Nullable;
+
+public class SwiftScarfItem extends Item {
 
     public SwiftScarfItem() {
         super(new Properties().stacksTo(1));
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        LivingEntity entity = slotContext.entity();
-        if (!entity.level().isClientSide() && entity instanceof Player player) {
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, EFFECT_DURATION_TICKS, 0, false, false, true));
+    public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
+        if (ModList.get().isLoaded("curios")) {
+            return CuriosCompat.createEffectCurioProvider(stack,
+                () -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 220, 0, false, false, true));
         }
+        return null;
     }
 }

@@ -3,5 +3,6 @@
   "item.brtfacts.miners_goggles": "Miner's Goggles",
   "item.brtfacts.iron_fist": "Iron Fist",
   "item.brtfacts.bunny_slippers": "Bunny Slippers",
-  "itemGroup.brtfacts_tab": "BrtFacts"
+  "itemGroup.brtfacts_tab": "BrtFacts",
+  "curios.identifier.feet": "Feet"
 }
