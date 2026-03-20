@@ -1,7 +1,9 @@
 package com.brtfacts;
 
 import com.brtfacts.item.BunnySlippersItem;
+import com.brtfacts.item.EnderMonocleItem;
 import com.brtfacts.item.IronFistItem;
+import com.brtfacts.item.MagmaHeartBeltItem;
 import com.brtfacts.item.MinersGogglesItem;
 import com.brtfacts.item.SwiftScarfItem;
 import com.mojang.logging.LogUtils;
@@ -19,8 +21,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 @Mod(BrtFacts.MODID)
-public class BrtFacts
-{
+public class BrtFacts {
     public static final String MODID = "brtfacts";
     private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -30,22 +31,29 @@ public class BrtFacts
     public static final RegistryObject<Item> MINERS_GOGGLES = ITEMS.register("miners_goggles", MinersGogglesItem::new);
     public static final RegistryObject<Item> IRON_FIST = ITEMS.register("iron_fist", IronFistItem::new);
     public static final RegistryObject<Item> BUNNY_SLIPPERS = ITEMS.register("bunny_slippers", BunnySlippersItem::new);
+    public static final RegistryObject<Item> ENDER_MONOCLE = ITEMS.register("ender_monocle", EnderMonocleItem::new);
+    public static final RegistryObject<Item> MAGMA_HEART_BELT = ITEMS.register("magma_heart_belt",
+            MagmaHeartBeltItem::new);
 
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(net.minecraft.core.registries.Registries.CREATIVE_MODE_TAB, MODID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister
+            .create(net.minecraft.core.registries.Registries.CREATIVE_MODE_TAB, MODID);
 
-    public static final RegistryObject<CreativeModeTab> BRTFACTS_TAB = CREATIVE_MODE_TABS.register("brtfacts_tab", () -> CreativeModeTab.builder()
-            .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> MINERS_GOGGLES.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-                output.accept(SWIFT_SCARF.get());
-                output.accept(MINERS_GOGGLES.get());
-                output.accept(IRON_FIST.get());
-                output.accept(BUNNY_SLIPPERS.get());
-            })
-            .build());
+    public static final RegistryObject<CreativeModeTab> BRTFACTS_TAB = CREATIVE_MODE_TABS.register("brtfacts_tab",
+            () -> CreativeModeTab.builder()
+                    .withTabsBefore(CreativeModeTabs.COMBAT)
+                    .title(net.minecraft.network.chat.Component.translatable("itemGroup.brtfacts_tab"))
+                    .icon(() -> MINERS_GOGGLES.get().getDefaultInstance())
+                    .displayItems((parameters, output) -> {
+                        output.accept(SWIFT_SCARF.get());
+                        output.accept(MINERS_GOGGLES.get());
+                        output.accept(IRON_FIST.get());
+                        output.accept(BUNNY_SLIPPERS.get());
+                        output.accept(ENDER_MONOCLE.get());
+                        output.accept(MAGMA_HEART_BELT.get());
+                    })
+                    .build());
 
-    public BrtFacts(FMLJavaModLoadingContext context)
-    {
+    public BrtFacts(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
         ITEMS.register(modEventBus);
@@ -55,8 +63,7 @@ public class BrtFacts
         modEventBus.addListener(this::addCreative);
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             // event.accept(SWIFT_SCARF);
         }

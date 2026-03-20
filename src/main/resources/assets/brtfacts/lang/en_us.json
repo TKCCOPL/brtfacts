@@ -1,8 +1,17 @@
 {
   "item.brtfacts.swift_scarf": "Swift Scarf",
+  "item.brtfacts.swift_scarf.desc": "Provides persistent movement speed when equipped.",
   "item.brtfacts.miners_goggles": "Miner's Goggles",
+  "item.brtfacts.miners_goggles.desc": "Grants night vision when equipped.",
   "item.brtfacts.iron_fist": "Iron Fist",
+  "item.brtfacts.iron_fist.desc": "Greatly increases attack damage when equipped.",
   "item.brtfacts.bunny_slippers": "Bunny Slippers",
+  "item.brtfacts.bunny_slippers.desc": "Grants jump boost when equipped.",
+  "item.brtfacts.ender_monocle": "Ender Monocle",
+  "item.brtfacts.ender_monocle.desc": "Provides night vision and makes nearby entities glow.",
+  "item.brtfacts.magma_heart_belt": "Magma Heart Belt",
+  "item.brtfacts.magma_heart_belt.desc": "Provides fire resistance and immunity to freezing.",
   "itemGroup.brtfacts_tab": "BrtFacts",
-  "curios.identifier.feet": "Feet"
+  "curios.identifier.feet": "Feet",
+  "curios.identifier.belt": "Belt"
 }

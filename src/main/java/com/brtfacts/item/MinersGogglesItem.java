@@ -13,6 +13,12 @@ import net.minecraftforge.fml.ModList;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import net.minecraft.ChatFormatting;
+import java.util.List;
+
 public class MinersGogglesItem extends Item {
 
     public MinersGogglesItem() {
@@ -26,5 +32,11 @@ public class MinersGogglesItem extends Item {
                 () -> new MobEffectInstance(MobEffects.NIGHT_VISION, 220, 0, false, false, true));
         }
         return null;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+        tooltipComponents.add(Component.translatable("item.brtfacts.miners_goggles.desc").withStyle(ChatFormatting.GRAY));
+        super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
     }
 }

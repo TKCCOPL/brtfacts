@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LCL",
+    "MHM",
+    "LNL"
+  ],
+  "key": {
+    "L": { "item": "minecraft:leather" },
+    "C": { "item": "minecraft:chain" },
+    "M": { "item": "minecraft:magma_cream" },
+    "H": { "item": "minecraft:magma_block" },
+    "N": { "item": "minecraft:nether_star" }
+  },
+  "result": {
+    "item": "brtfacts:magma_heart_belt"
+  }
+}

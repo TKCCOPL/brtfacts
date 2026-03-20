@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "brtfacts:miners_goggles"
+    "brtfacts:miners_goggles",
+    "brtfacts:ender_monocle"
   ]
 }

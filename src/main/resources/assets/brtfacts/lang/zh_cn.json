@@ -1,8 +1,17 @@
 {
   "item.brtfacts.swift_scarf": "迅捷围巾",
+  "item.brtfacts.swift_scarf.desc": "穿戴时提供持久的移动速度提升。",
   "item.brtfacts.miners_goggles": "矿工护目镜",
+  "item.brtfacts.miners_goggles.desc": "穿戴时在黑暗中提供清晰的夜视。",
   "item.brtfacts.iron_fist": "铁拳",
+  "item.brtfacts.iron_fist.desc": "沉重的铁拳，穿戴时大幅增加攻击伤害。",
   "item.brtfacts.bunny_slippers": "兔兔拖鞋",
-  "itemGroup.brtfacts_tab": "BrtFacts",
-  "curios.identifier.feet": "足部"
+  "item.brtfacts.bunny_slippers.desc": "穿戴时赋予跳跃提升效果。",
+  "item.brtfacts.ender_monocle": "末影单片镜",
+  "item.brtfacts.ender_monocle.desc": "穿戴时提供夜视，并使附近的生物发光。",
+  "item.brtfacts.magma_heart_belt": "岩浆之心腰带",
+  "item.brtfacts.magma_heart_belt.desc": "穿戴时提供防火效果，并免疫冰冻伤害。",
+  "itemGroup.brtfacts_tab": "Brt 饰品",
+  "curios.identifier.feet": "足部",
+  "curios.identifier.belt": "腰带"
 }

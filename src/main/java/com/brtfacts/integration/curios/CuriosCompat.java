@@ -20,6 +20,7 @@ import top.theillusivec4.curios.api.type.capability.ICurio;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
+import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
 public class CuriosCompat {
@@ -68,6 +69,34 @@ public class CuriosCompat {
                 public Multimap<Attribute, AttributeModifier> getAttributeModifiers(
                         SlotContext slotContext, UUID uuid) {
                     return modifiers;
+                }
+
+                @Override
+                public boolean canEquipFromUse(SlotContext slotContext) {
+                    return true;
+                }
+            });
+
+            @Nonnull
+            @Override
+            public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+                return CuriosCapability.ITEM.orEmpty(cap, curio);
+            }
+        };
+    }
+
+    public static ICapabilityProvider createCustomTickCurioProvider(ItemStack stack,
+                                                                      BiConsumer<SlotContext, ItemStack> tickHandler) {
+        return new ICapabilityProvider() {
+            private final LazyOptional<ICurio> curio = LazyOptional.of(() -> new ICurio() {
+                @Override
+                public ItemStack getStack() {
+                    return stack;
+                }
+
+                @Override
+                public void curioTick(SlotContext slotContext) {
+                    tickHandler.accept(slotContext, stack);
                 }
 
                 @Override
